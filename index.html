@@ -100,8 +100,8 @@
   </div>
   <div class="kpi highlight">
     <div class="kpi-label"><span class="dot-sm"></span> Migrated to New OSS</div>
-    <div class="kpi-value">1,478,348</div>
-    <div class="kpi-sub">pimcore-prod-assets (Dubai)</div>
+    <div class="kpi-value">1,457,254</div>
+    <div class="kpi-sub">pimcore-prod-assets (Dubai) &middot; 15.25 TB</div>
   </div>
   <div class="kpi">
     <div class="kpi-label">Duplicates Excluded</div>
@@ -288,13 +288,29 @@
 <div class="section" id="verification">
   <div class="section-title">Verification Results</div>
 
+  <h2>Bucket Comparison &mdash; Before &amp; After</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>Metric</th><th style="text-align:right">Old OSS (Singapore)</th><th style="text-align:right">New OSS (Dubai)</th></tr></thead>
+      <tbody>
+        <tr><td>Bucket</td><td class="num">pimcore-prod-01</td><td class="num">pimcore-prod-assets</td></tr>
+        <tr><td>Total files</td><td class="num">1,935,765</td><td class="num">1,457,254</td></tr>
+        <tr><td>Total size</td><td class="num">~21.0 TB</td><td class="num">15.25 TB</td></tr>
+        <tr><td>Duplicates removed</td><td class="num">&mdash;</td><td class="num">457,367 (SAFE_TO_DELETE)</td></tr>
+        <tr><td>Storage saved</td><td class="num">&mdash;</td><td class="num">~5.75 TB (27%)</td></tr>
+        <tr><td>Path format</td><td class="num">asset/folder/sub/.../file</td><td class="num">{uid}/{filename}</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <h2>Target Bucket &mdash; Final State</h2>
   <p>Complete verification of the new OSS bucket confirmed all migrated files exist with correct sizes. Multiple independent verification methods produced identical results.</p>
   <div class="card">
     <table>
       <thead><tr><th>Metric</th><th style="text-align:right">Result</th></tr></thead>
       <tbody>
-        <tr><td>Total files in new OSS</td><td class="num">~1,478,348</td></tr>
+        <tr><td>Total files in new OSS</td><td class="num">1,457,254</td></tr>
+        <tr><td>Total size</td><td class="num">15.25 TB</td></tr>
         <tr><td>Path format</td><td class="num">{32-char-hex-uid}/{filename}</td></tr>
         <tr><td>Size mismatches</td><td class="num">0</td></tr>
         <tr><td>Verification errors</td><td class="num">0</td></tr>
