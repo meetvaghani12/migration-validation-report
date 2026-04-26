@@ -296,11 +296,16 @@
         <tr><td>Bucket</td><td class="num">pimcore-prod-01</td><td class="num">pimcore-prod-assets</td></tr>
         <tr><td>Total files</td><td class="num">1,935,765</td><td class="num">1,457,254</td></tr>
         <tr><td>Total size</td><td class="num">~21.0 TB</td><td class="num">15.25 TB</td></tr>
-        <tr><td>Duplicates removed</td><td class="num">&mdash;</td><td class="num">457,367 (SAFE_TO_DELETE)</td></tr>
-        <tr><td>Storage saved</td><td class="num">&mdash;</td><td class="num">~5.75 TB (27%)</td></tr>
+        <tr><td>Duplicates excluded</td><td class="num">&mdash;</td><td class="num">457,367 files (SAFE_TO_DELETE)</td></tr>
+        <tr><td>Storage saved (migrated scope)</td><td class="num">&mdash;</td><td class="num">~5.75 TB</td></tr>
+        <tr><td>Total SAFE_TO_DELETE (full bucket)</td><td class="num">2,406,760 files / 9.01 TB</td><td class="num">&mdash;</td></tr>
         <tr><td>Path format</td><td class="num">asset/folder/sub/.../file</td><td class="num">{uid}/{filename}</td></tr>
       </tbody>
     </table>
+  </div>
+
+  <div class="note">
+    <strong>Storage savings clarification:</strong> The total SAFE_TO_DELETE pool across the entire source bucket was <strong>2,406,760 files (9.01 TB)</strong>. However, the migration scope covered 6 primary folders (<code>asset/</code>, <code>assets/</code>, <code>musictribe-dam/</code>, etc.), excluding system folders like <code>versions/</code> (Pimcore version history, 12+ TB), <code>recyclebin/</code>, <code>thumbnails/</code>, and <code>asset-cache/</code>. Of the 9.01 TB SAFE_TO_DELETE duplicates, ~5.75 TB fell within the migrated folders and ~3.26 TB were in the excluded system folders &mdash; which were not migrated regardless of duplication status.
   </div>
 
   <h2>Target Bucket &mdash; Final State</h2>
